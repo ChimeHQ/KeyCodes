@@ -217,7 +217,7 @@ public struct Key {
     public init(keyCode: KeyboardHIDUsage, characters: String, modifierFlags: KeyModifierFlags = []) {
         self.keyCode = keyCode
         self.characters = characters
-        self.charactersIgnoringModifiers = characters
+        self.charactersIgnoringModifiers = characters.lowercased()
         self.modifierFlags = modifierFlags
     }
 
