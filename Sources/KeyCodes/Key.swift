@@ -293,10 +293,16 @@ public struct Key {
             self.keyCode = .keyboard3
         case "4":
             self.keyCode = .keyboard4
+        case "$":
+            self.keyCode = .keyboard4
+            self.modifierFlags = [.shift]
         case "5":
             self.keyCode = .keyboard5
         case "6":
             self.keyCode = .keyboard6
+        case "^":
+            self.keyCode = .keyboard6
+            self.modifierFlags = [.shift]
         case "7":
             self.keyCode = .keyboard7
         case "8":
@@ -304,9 +310,6 @@ public struct Key {
         case "9":
             self.keyCode = .keyboard9
 
-        case "$":
-            self.keyCode = .keyboard4
-            self.modifierFlags = [.shift]
         case "-":
             self.keyCode = .keyboardHyphen
         case "_":
