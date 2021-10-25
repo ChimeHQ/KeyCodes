@@ -223,7 +223,7 @@ public struct Key {
 
     public init?(_ character: Character) {
         self.characters = String(character)
-        self.charactersIgnoringModifiers = String(character)
+        self.charactersIgnoringModifiers = String(character).lowercased()
         self.modifierFlags = []
 
         switch character {
