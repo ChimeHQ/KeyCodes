@@ -162,14 +162,14 @@ extension NSEvent {
     }
 
     public var key: Key? {
-        let characters = characters ?? ""
-        let charactersIgnoringModifiers = charactersIgnoringModifiers ?? ""
+        let chars = characters ?? ""
+        let charsIgnoringModifiers = charactersIgnoringModifiers ?? ""
 
         switch (keyboardHIDUsage, keyModifierFlags) {
         case (let key?, let mods?):
             return Key(keyCode: key,
-                       characters: characters,
-                       charactersIgnoringModifiers: charactersIgnoringModifiers,
+                       characters: chars,
+                       charactersIgnoringModifiers: charsIgnoringModifiers,
                        modifierFlags: mods)
         default:
             return nil
