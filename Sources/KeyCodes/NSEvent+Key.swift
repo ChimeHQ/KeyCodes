@@ -145,6 +145,58 @@ extension NSEvent {
         case kVK_ANSI_Period:
             return .keyboardPeriod
 
+        case kVK_ANSI_KeypadDecimal:
+            return .keypadPeriod
+
+        case kVK_F1:
+            return .keyboardF1
+        case kVK_F2:
+            return .keyboardF2
+        case kVK_F3:
+            return .keyboardF3
+        case kVK_F4:
+            return .keyboardF4
+        case kVK_F5:
+            return .keyboardF5
+        case kVK_F6:
+            return .keyboardF6
+        case kVK_F7:
+            return .keyboardF7
+        case kVK_F8:
+            return .keyboardF8
+        case kVK_F9:
+            return .keyboardF9
+        case kVK_F10:
+            return .keyboardF10
+        case kVK_F11:
+            return .keyboardF11
+        case kVK_F12:
+            return .keyboardF12
+        case kVK_F13:
+            return .keyboardF13
+        case kVK_F14:
+            return .keyboardF14
+        case kVK_F15:
+            return .keyboardF15
+        case kVK_F16:
+            return .keyboardF16
+        case kVK_F17:
+            return .keyboardF17
+        case kVK_F18:
+            return .keyboardF18
+        case kVK_F19:
+            return .keyboardF19
+        case kVK_F20:
+            return .keyboardF20
+
+        case kVK_PageUp:
+            return .keyboardPageUp
+        case kVK_PageDown:
+            return .keyboardPageDown
+        case kVK_Home:
+            return .keyboardHome
+        case kVK_Help:
+            return .keyboardHelp
         case kVK_Return:
             return .keyboardReturn
         case kVK_Tab:

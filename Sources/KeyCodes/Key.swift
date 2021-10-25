@@ -283,14 +283,21 @@ public struct Key {
         case "z":
             self.keyCode = .keyboardZ
 
-        case "0":
-            self.keyCode = .keyboard0
         case "1":
             self.keyCode = .keyboard1
+        case "!":
+            self.keyCode = .keyboard1
+            self.modifierFlags = [.shift]
         case "2":
             self.keyCode = .keyboard2
+        case "@":
+            self.keyCode = .keyboard2
+            self.modifierFlags = [.shift]
         case "3":
             self.keyCode = .keyboard3
+        case "#":
+            self.keyCode = .keyboard3
+            self.modifierFlags = [.shift]
         case "4":
             self.keyCode = .keyboard4
         case "$":
@@ -298,6 +305,9 @@ public struct Key {
             self.modifierFlags = [.shift]
         case "5":
             self.keyCode = .keyboard5
+        case "%":
+            self.keyCode = .keyboard5
+            self.modifierFlags = [.shift]
         case "6":
             self.keyCode = .keyboard6
         case "^":
@@ -305,15 +315,39 @@ public struct Key {
             self.modifierFlags = [.shift]
         case "7":
             self.keyCode = .keyboard7
+        case "&":
+            self.keyCode = .keyboard7
+            self.modifierFlags = [.shift]
         case "8":
             self.keyCode = .keyboard8
+        case "*":
+            self.keyCode = .keyboard8
+            self.modifierFlags = [.shift]
         case "9":
             self.keyCode = .keyboard9
+        case "(":
+            self.keyCode = .keyboard9
+            self.modifierFlags = [.shift]
+        case "0":
+            self.keyCode = .keyboard0
+        case ")":
+            self.keyCode = .keyboard0
+            self.modifierFlags = [.shift]
 
         case "-":
             self.keyCode = .keyboardHyphen
         case "_":
             self.keyCode = .keyboardHyphen
+            self.modifierFlags = [.shift]
+        case ",":
+            self.keyCode = .keyboardComma
+        case "<":
+            self.keyCode = .keyboardComma
+            self.modifierFlags = [.shift]
+        case ".":
+            self.keyCode = .keyboardPeriod
+        case ">":
+            self.keyCode = .keyboardPeriod
             self.modifierFlags = [.shift]
         default:
             return nil
