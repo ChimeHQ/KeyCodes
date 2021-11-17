@@ -144,9 +144,39 @@ extension NSEvent {
             return .keyboardSlash
         case kVK_ANSI_Period:
             return .keyboardPeriod
+        case kVK_ANSI_Grave:
+            return .keyboardGraveAccentAndTilde
 
         case kVK_ANSI_KeypadDecimal:
             return .keypadPeriod
+        case kVK_ANSI_KeypadPlus:
+            return .keypadPlus
+        case kVK_ANSI_KeypadMinus:
+            return .keypadHyphen
+        case kVK_ANSI_KeypadDivide:
+            return .keypadSlash
+        case kVK_ANSI_KeypadMultiply:
+            return .keypadAsterisk
+        case kVK_ANSI_Keypad0:
+            return .keypad0
+        case kVK_ANSI_Keypad1:
+            return .keypad1
+        case kVK_ANSI_Keypad2:
+            return .keypad2
+        case kVK_ANSI_Keypad3:
+            return .keypad3
+        case kVK_ANSI_Keypad4:
+            return .keypad4
+        case kVK_ANSI_Keypad5:
+            return .keypad5
+        case kVK_ANSI_Keypad6:
+            return .keypad6
+        case kVK_ANSI_Keypad7:
+            return .keypad7
+        case kVK_ANSI_Keypad8:
+            return .keypad8
+        case kVK_ANSI_Keypad9:
+            return .keypad9
 
         case kVK_F1:
             return .keyboardF1
@@ -207,6 +237,10 @@ extension NSEvent {
             return .keyboardDeleteOrBackspace
         case kVK_Escape:
             return .keyboardEscape
+        case kVK_VolumeUp:
+            return .keyboardVolumeUp
+        case kVK_VolumeDown:
+            return .keyboardVolumeDown
 
         default:
             return nil

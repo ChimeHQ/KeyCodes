@@ -234,54 +234,129 @@ public struct Key {
             self.modifierFlags = [.shift]
         case "b":
             self.keyCode = .keyboardB
+        case "B":
+            self.keyCode = .keyboardB
+            self.modifierFlags = [.shift]
         case "c":
             self.keyCode = .keyboardC
+        case "C":
+            self.keyCode = .keyboardC
+            self.modifierFlags = [.shift]
         case "d":
             self.keyCode = .keyboardD
+        case "D":
+            self.keyCode = .keyboardD
+            self.modifierFlags = [.shift]
         case "e":
             self.keyCode = .keyboardE
+        case "E":
+            self.keyCode = .keyboardE
+            self.modifierFlags = [.shift]
         case "f":
             self.keyCode = .keyboardF
+        case "F":
+            self.keyCode = .keyboardF
+            self.modifierFlags = [.shift]
         case "g":
             self.keyCode = .keyboardG
+        case "G":
+            self.keyCode = .keyboardG
+            self.modifierFlags = [.shift]
         case "h":
             self.keyCode = .keyboardH
+        case "H":
+            self.keyCode = .keyboardH
+            self.modifierFlags = [.shift]
         case "i":
             self.keyCode = .keyboardI
+        case "I":
+            self.keyCode = .keyboardI
+            self.modifierFlags = [.shift]
         case "j":
             self.keyCode = .keyboardJ
+        case "J":
+            self.keyCode = .keyboardJ
+            self.modifierFlags = [.shift]
         case "k":
             self.keyCode = .keyboardK
+        case "K":
+            self.keyCode = .keyboardK
+            self.modifierFlags = [.shift]
         case "l":
             self.keyCode = .keyboardL
+        case "L":
+            self.keyCode = .keyboardL
+            self.modifierFlags = [.shift]
         case "m":
             self.keyCode = .keyboardM
+        case "M":
+            self.keyCode = .keyboardM
+            self.modifierFlags = [.shift]
         case "n":
             self.keyCode = .keyboardN
+        case "N":
+            self.keyCode = .keyboardN
+            self.modifierFlags = [.shift]
         case "o":
             self.keyCode = .keyboardO
+        case "O":
+            self.keyCode = .keyboardO
+            self.modifierFlags = [.shift]
         case "p":
             self.keyCode = .keyboardP
+        case "P":
+            self.keyCode = .keyboardP
+            self.modifierFlags = [.shift]
         case "q":
             self.keyCode = .keyboardQ
+        case "Q":
+            self.keyCode = .keyboardQ
+            self.modifierFlags = [.shift]
         case "r":
             self.keyCode = .keyboardR
+        case "R":
+            self.keyCode = .keyboardR
+            self.modifierFlags = [.shift]
         case "s":
             self.keyCode = .keyboardS
+        case "S":
+            self.keyCode = .keyboardS
+            self.modifierFlags = [.shift]
         case "t":
             self.keyCode = .keyboardT
+        case "T":
+            self.keyCode = .keyboardT
+            self.modifierFlags = [.shift]
         case "u":
             self.keyCode = .keyboardU
+        case "U":
+            self.keyCode = .keyboardU
+            self.modifierFlags = [.shift]
         case "v":
             self.keyCode = .keyboardV
+        case "V":
+            self.keyCode = .keyboardV
+            self.modifierFlags = [.shift]
         case "w":
             self.keyCode = .keyboardW
+        case "W":
+            self.keyCode = .keyboardW
+            self.modifierFlags = [.shift]
         case "x":
             self.keyCode = .keyboardX
+        case "X":
+            self.keyCode = .keyboardX
+            self.modifierFlags = [.shift]
         case "y":
             self.keyCode = .keyboardY
+        case "Y":
+            self.keyCode = .keyboardY
+            self.modifierFlags = [.shift]
         case "z":
             self.keyCode = .keyboardZ
+        case "Z":
+            self.keyCode = .keyboardZ
+            self.modifierFlags = [.shift]
 
         case "1":
             self.keyCode = .keyboard1
@@ -349,6 +424,47 @@ public struct Key {
         case ">":
             self.keyCode = .keyboardPeriod
             self.modifierFlags = [.shift]
+        case "`":
+            self.keyCode = .keyboardGraveAccentAndTilde
+        case "~":
+            self.keyCode = .keyboardGraveAccentAndTilde
+            self.modifierFlags = [.shift]
+        case "=":
+            self.keyCode = .keyboardEqualSign
+        case "+":
+            self.keyCode = .keyboardEqualSign
+            self.modifierFlags = [.shift]
+        case "[":
+            self.keyCode = .keyboardOpenBracket
+        case "{":
+            self.keyCode = .keyboardOpenBracket
+            self.modifierFlags = [.shift]
+        case "]":
+            self.keyCode = .keyboardCloseBracket
+        case "}":
+            self.keyCode = .keyboardCloseBracket
+            self.modifierFlags = [.shift]
+        case "\\":
+            self.keyCode = .keyboardBackslash
+        case "|":
+            self.keyCode = .keyboardBackslash
+            self.modifierFlags = [.shift]
+        case ";":
+            self.keyCode = .keyboardSemicolon
+        case ":":
+            self.keyCode = .keyboardSemicolon
+            self.modifierFlags = [.shift]
+        case "'":
+            self.keyCode = .keyboardQuote
+        case "\"":
+            self.keyCode = .keyboardQuote
+            self.modifierFlags = [.shift]
+        case "/":
+            self.keyCode = .keyboardSlash
+        case "?":
+            self.keyCode = .keyboardSlash
+            self.modifierFlags = [.shift]
+
         default:
             return nil
         }
