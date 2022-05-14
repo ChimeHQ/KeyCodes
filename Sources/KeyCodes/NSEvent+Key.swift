@@ -10,7 +10,7 @@ extension NSEvent {
 
         var flags = KeyModifierFlags(rawValue: 0)
 
-        let deviceIndependentFlags = modifierFlags.intersection([.deviceIndependentFlagsMask])
+        let deviceIndependentFlags = modifierFlags.deviceIndependentOnly
 
         if deviceIndependentFlags.contains(.control) {
             flags.insert(.control)
@@ -262,5 +262,13 @@ extension NSEvent {
         }
     }
 }
+
+extension NSEvent.ModifierFlags {
+    /// Returns the intersection with .deviceIndependentFlagsMask
+    public var deviceIndependentOnly: NSEvent.ModifierFlags {
+        return intersection([.deviceIndependentFlagsMask])
+    }
+}
+
 #endif
 
