@@ -4,7 +4,7 @@ import Carbon.HIToolbox
 import AppKit
 #endif
 
-public enum KeyboardHIDUsage {
+public enum KeyboardHIDUsage: Hashable, Sendable {
     case keyboardA
     case keyboardB
     case keyboardC
@@ -180,28 +180,22 @@ public enum KeyboardHIDUsage {
     case keyboard_Reserved
 }
 
-extension KeyboardHIDUsage: Hashable {
-}
-
-public struct KeyModifierFlags: OptionSet {
+public struct KeyModifierFlags: OptionSet, Sendable, Hashable {
     public var rawValue: UInt
 
     public init(rawValue: UInt) {
         self.rawValue = rawValue
     }
 
-    static var alphaShift = KeyModifierFlags(rawValue: 1 << 16)
-    static var shift = KeyModifierFlags(rawValue: 1 << 17)
-    static var control = KeyModifierFlags(rawValue: 1 << 18)
-    static var alternate = KeyModifierFlags(rawValue: 1 << 19)
-    static var command = KeyModifierFlags(rawValue: 1 << 20)
-    static var numericPad = KeyModifierFlags(rawValue: 1 << 21)
+    public static let alphaShift = KeyModifierFlags(rawValue: 1 << 16)
+    public static let shift = KeyModifierFlags(rawValue: 1 << 17)
+    public static let control = KeyModifierFlags(rawValue: 1 << 18)
+    public static let alternate = KeyModifierFlags(rawValue: 1 << 19)
+    public static let command = KeyModifierFlags(rawValue: 1 << 20)
+    public static let numericPad = KeyModifierFlags(rawValue: 1 << 21)
 }
 
-extension KeyModifierFlags: Hashable {
-}
-
-public struct Key {
+public struct Key: Hashable, Sendable {
     public var keyCode: KeyboardHIDUsage
     public var modifierFlags: KeyModifierFlags
     public var characters: String
@@ -469,7 +463,4 @@ public struct Key {
             return nil
         }
     }
-}
-
-extension Key: Hashable {
 }
