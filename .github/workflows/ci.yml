@@ -4,16 +4,30 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - 'README.md'
+      - 'CODE_OF_CONDUCT.md'
+      - '.editorconfig'
+      - '.spi.yml'
   pull_request:
     branches:
-      - '**'
+      - main
 
 jobs:
   test:
-    name: Test on destination ${{ matrix.destination }}
+    name: Test
     runs-on: macOS-latest
+    strategy:
+      matrix:
+        destination:
+          - "platform=macOS"
+          - "platform=iOS Simulator,name=iPhone 12"
+          - "platform=tvOS Simulator,name=Apple TV"
     
     steps:
-    - uses: actions/checkout@v1
-    - name: test ${{ matrix.destination }}
-      run: swift test
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install XCBeautify
+        run: brew install xcbeautify
+      - name: Test platform ${{ matrix.destination }}
+        run: set -o pipefail && xcodebuild -scheme KeyCodes -destination "${{ matrix.destination }}" test | xcbeautify --renderer github-actions
