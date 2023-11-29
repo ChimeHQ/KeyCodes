@@ -1,6 +1,10 @@
+<div align="center">
+
 [![Build Status][build status badge]][build status]
-[![License][license badge]][license]
 [![Platforms][platforms badge]][platforms]
+[![Discord][discord badge]][discord]
+
+</div>
 
 # KeyCodes
 
@@ -8,25 +12,49 @@ Versions of `UIKey`, `UIKeyboardHIDUsage`, and `UIKeyModifierFlags` that work wi
 
 These structures are particularly helpful for writing tests. Constructing `NSEvent` instances by hand is a pain.
 
-## Integration
+## Usage
 
-### Swift Package Manager
+```swift
+import Carbon.HIToolbox
+
+func withoutKeyCodes(_ event: NSEvent) {
+    let code = Int(event.keyCode)
+    
+    if code == kVK_Return {
+        doThing()
+    }
+}
+
+import KeyCodes
+
+func withKeyCodes(_ event: NSEvent) {
+    if event.keyboardHIDUsage == .keyboardReturn {
+        doThing()
+    }
+}
+```
+
+## Integration
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/ChimeHQ/KeyCodes")
+    .package(url: "https://github.com/ChimeHQ/KeyCodes", from: "0.1.1")
 ]
 ```
 
-## Suggestions or Feedback
+## Contributing and Collaboration
 
-We'd love to hear from you! Get in touch via an issue or pull request.
+I would love to hear from you! Issues or pull requests work great. A [Discord server][discord] is also available for live help, but I have a strong bias towards answering in the form of documenation.
 
-Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
+I prefer collaboration, and would love to find ways to work together if you have a similar project.
+
+I prefer indentation with tabs for improved accessibility. But, I'd rather you use the system you want and make a PR than hesitate because of whitespace.
+
+By participating in this project you agree to abide by the [Contributor Code of Conduct](CODE_OF_CONDUCT.md).
 
 [build status]: https://github.com/ChimeHQ/KeyCodes/actions
 [build status badge]: https://github.com/ChimeHQ/KeyCodes/workflows/CI/badge.svg
-[license]: https://opensource.org/licenses/BSD-3-Clause
-[license badge]: https://img.shields.io/github/license/ChimeHQ/KeyCodes
 [platforms]: https://swiftpackageindex.com/ChimeHQ/KeyCodes
 [platforms badge]: https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FChimeHQ%2FKeyCodes%2Fbadge%3Ftype%3Dplatforms
+[discord]: https://discord.gg/esFpX6sErJ
+[discord badge]: https://img.shields.io/badge/Discord-purple?logo=Discord&label=Chat&color=%235A64EC
