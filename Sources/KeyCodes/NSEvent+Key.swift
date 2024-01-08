@@ -3,7 +3,7 @@ import Carbon.HIToolbox
 import AppKit
 
 extension NSEvent {
-    var keyModifierFlags: KeyModifierFlags? {
+    public var keyModifierFlags: KeyModifierFlags? {
         guard type == .keyDown || type == .keyUp else {
             return nil
         }
@@ -35,7 +35,7 @@ extension NSEvent {
         return flags
     }
 
-    var keyboardHIDUsage: KeyboardHIDUsage? {
+    public var keyboardHIDUsage: KeyboardHIDUsage? {
         guard type == .keyDown || type == .keyUp else {
             return nil
         }
