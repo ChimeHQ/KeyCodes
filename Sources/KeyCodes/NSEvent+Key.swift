@@ -3,6 +3,9 @@ import Carbon.HIToolbox
 import AppKit
 
 extension NSEvent {
+	/// Return the set of flags representable by KeyModifierFlags
+	///
+	/// This value can be a subset of the results of `deviceIndependentOnly`. There are flag values that `NSEvent` can include which are not representable by the `KeyModifierFlags` set.
     public var keyModifierFlags: KeyModifierFlags? {
         guard type == .keyDown || type == .keyUp else {
             return nil
@@ -265,6 +268,8 @@ extension NSEvent {
 
 extension NSEvent.ModifierFlags {
     /// Returns the intersection with .deviceIndependentFlagsMask
+	///
+	/// This value can include flags that are not representable by the `KeyModifierFlags` enum.
     public var deviceIndependentOnly: NSEvent.ModifierFlags {
         return intersection([.deviceIndependentFlagsMask])
     }
