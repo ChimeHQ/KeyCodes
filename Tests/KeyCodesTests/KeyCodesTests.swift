@@ -59,6 +59,5 @@ final class KeyCodesTests: XCTestCase {
         XCTAssertEqual(Key(">"), Key(keyCode: .keyboardPeriod, characters: ">", modifierFlags: [.shift]))
         XCTAssertEqual(Key("/"), Key(keyCode: .keyboardSlash, characters: "/"))
         XCTAssertEqual(Key("?"), Key(keyCode: .keyboardSlash, characters: "?", modifierFlags: [.shift]))
-
     }
 }

@@ -35,6 +35,10 @@ extension NSEvent {
             flags.insert(.alphaShift)
         }
 
+		if deviceIndependentFlags.contains(.numericPad) {
+			flags.insert(.numericPad)
+		}
+
         return flags
     }
 
