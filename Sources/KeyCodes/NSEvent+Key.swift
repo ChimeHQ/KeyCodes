@@ -232,6 +232,8 @@ extension NSEvent {
             return .keyboardPageDown
         case kVK_Home:
             return .keyboardHome
+        case kVK_End:
+            return .keyboardEnd
         case kVK_Help:
             return .keyboardHelp
         case kVK_Return:
@@ -242,6 +244,8 @@ extension NSEvent {
             return .keyboardSpacebar
         case kVK_Delete:
             return .keyboardDeleteOrBackspace
+        case kVK_ForwardDelete:
+            return .keyboardDeleteForward
         case kVK_Escape:
             return .keyboardEscape
         case kVK_VolumeUp:
