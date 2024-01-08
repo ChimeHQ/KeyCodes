@@ -1,5 +1,7 @@
 import XCTest
 import KeyCodes
+
+#if os(macOS)
 import Carbon.HIToolbox
 
 final class NSEventTests: XCTestCase {
@@ -15,3 +17,4 @@ final class NSEventTests: XCTestCase {
 		XCTAssertEqual(event.keyModifierFlags, [.command, .numericPad])
 	}
 }
+#endif
