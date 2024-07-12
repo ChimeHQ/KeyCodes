@@ -16,5 +16,17 @@ final class NSEventTests: XCTestCase {
 
 		XCTAssertEqual(event.keyModifierFlags, [.command, .numericPad])
 	}
+
+	func testDeviceIndependentOnlyFromMouseDown() throws {
+		let eventRef = try XCTUnwrap(CGEvent(mouseEventSource: nil, mouseType: .leftMouseDown, mouseCursorPosition: CGPoint(), mouseButton: .left))
+		eventRef.flags = [.maskCommand]
+
+		let event = try XCTUnwrap(NSEvent(cgEvent: eventRef))
+
+		XCTAssertEqual(event.modifierFlags, [.command])
+		XCTAssertEqual(event.modifierFlags.deviceIndependentOnly, [.command])
+
+		XCTAssertEqual(event.keyModifierFlags, [.command])
+	}
 }
 #endif

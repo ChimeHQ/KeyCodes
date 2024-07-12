@@ -7,10 +7,6 @@ extension NSEvent {
 	///
 	/// This value can be a subset of the results of `deviceIndependentOnly`. There are flag values that `NSEvent` can include which are not representable by the `KeyModifierFlags` set.
     public var keyModifierFlags: KeyModifierFlags? {
-        guard type == .keyDown || type == .keyUp else {
-            return nil
-        }
-
         var flags = KeyModifierFlags(rawValue: 0)
 
         let deviceIndependentFlags = modifierFlags.deviceIndependentOnly
