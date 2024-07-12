@@ -23,6 +23,10 @@ func withoutKeyCodes(_ event: NSEvent) {
     if code == kVK_Return {
         doThing()
     }
+
+    if event.modifierFlags.deviceIndependentOnly.contains(.control) {
+        controlKeyActive()
+    }
 }
 
 import KeyCodes
@@ -30,6 +34,11 @@ import KeyCodes
 func withKeyCodes(_ event: NSEvent) {
     if event.keyboardHIDUsage == .keyboardReturn {
         doThing()
+    }
+
+    // UIKeyModifierFlags-compatible
+    if event.keyModifierFlags.contains(.control) {
+        controlKeyActive()
     }
 }
 ```
