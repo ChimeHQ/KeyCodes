@@ -65,6 +65,7 @@ final class KeyCodesTests: XCTestCase {
 }
 
 struct TestingKeyCodesTests {
+#if os(macOS)
 	@Test(arguments: [
 		(NSUpArrowFunctionKey, KeyboardHIDUsage.keyboardUpArrow),
 		(NSDownArrowFunctionKey, KeyboardHIDUsage.keyboardDownArrow),
@@ -107,4 +108,5 @@ struct TestingKeyCodesTests {
 
 		#expect(Key(utf16CodePoint: char) == Key(keyCode: input.1, characters: string))
 	}
+#endif
 }
