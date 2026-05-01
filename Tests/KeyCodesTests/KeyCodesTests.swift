@@ -1,3 +1,5 @@
+import Testing
+
 import XCTest
 @testable import KeyCodes
 
@@ -60,4 +62,49 @@ final class KeyCodesTests: XCTestCase {
         XCTAssertEqual(Key("/"), Key(keyCode: .keyboardSlash, characters: "/"))
         XCTAssertEqual(Key("?"), Key(keyCode: .keyboardSlash, characters: "?", modifierFlags: [.shift]))
     }
+}
+
+struct TestingKeyCodesTests {
+	@Test(arguments: [
+		(NSUpArrowFunctionKey, KeyboardHIDUsage.keyboardUpArrow),
+		(NSDownArrowFunctionKey, KeyboardHIDUsage.keyboardDownArrow),
+		(NSLeftArrowFunctionKey, KeyboardHIDUsage.keyboardLeftArrow),
+		(NSRightArrowFunctionKey, KeyboardHIDUsage.keyboardRightArrow),
+		(NSHomeFunctionKey, KeyboardHIDUsage.keyboardHome),
+		(NSDeleteFunctionKey, KeyboardHIDUsage.keyboardDeleteOrBackspace),
+		(NSPageUpFunctionKey, KeyboardHIDUsage.keyboardPageUp),
+		(NSPageDownFunctionKey, KeyboardHIDUsage.keyboardPageDown),
+		(NSPrintScreenFunctionKey, KeyboardHIDUsage.keyboardPrintScreen),
+		(NSUndoFunctionKey, KeyboardHIDUsage.keyboardUndo),
+		(NSHelpFunctionKey, KeyboardHIDUsage.keyboardHelp),
+		(NSFindFunctionKey, KeyboardHIDUsage.keyboardFind),
+		(NSSelectFunctionKey, KeyboardHIDUsage.keyboardSelect),
+		(NSMenuFunctionKey, KeyboardHIDUsage.keyboardMenu),
+		(NSF1FunctionKey, KeyboardHIDUsage.keyboardF1),
+		(NSF2FunctionKey, KeyboardHIDUsage.keyboardF2),
+		(NSF3FunctionKey, KeyboardHIDUsage.keyboardF3),
+		(NSF4FunctionKey, KeyboardHIDUsage.keyboardF4),
+		(NSF5FunctionKey, KeyboardHIDUsage.keyboardF5),
+		(NSF6FunctionKey, KeyboardHIDUsage.keyboardF6),
+		(NSF7FunctionKey, KeyboardHIDUsage.keyboardF7),
+		(NSF8FunctionKey, KeyboardHIDUsage.keyboardF8),
+		(NSF9FunctionKey, KeyboardHIDUsage.keyboardF9),
+		(NSF10FunctionKey, KeyboardHIDUsage.keyboardF10),
+		(NSF11FunctionKey, KeyboardHIDUsage.keyboardF11),
+		(NSF12FunctionKey, KeyboardHIDUsage.keyboardF12),
+		(NSF13FunctionKey, KeyboardHIDUsage.keyboardF13),
+		(NSF14FunctionKey, KeyboardHIDUsage.keyboardF14),
+		(NSF15FunctionKey, KeyboardHIDUsage.keyboardF15),
+		(NSF16FunctionKey, KeyboardHIDUsage.keyboardF16),
+		(NSF17FunctionKey, KeyboardHIDUsage.keyboardF17),
+		(NSF18FunctionKey, KeyboardHIDUsage.keyboardF18),
+		(NSF19FunctionKey, KeyboardHIDUsage.keyboardF19),
+		(NSF20FunctionKey, KeyboardHIDUsage.keyboardF20),
+	])
+	func functionKeys(input: (Int, KeyboardHIDUsage)) throws {
+		let char = UInt16(input.0)
+		let string = try #require(String(utf16CodePoint: char))
+
+		#expect(Key(utf16CodePoint: char) == Key(keyCode: input.1, characters: string))
+	}
 }

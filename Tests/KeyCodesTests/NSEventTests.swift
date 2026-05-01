@@ -90,7 +90,6 @@ struct TestingNSEventTests {
 		#expect(NSEvent.keyEvent(withUTF6CodePointKeyCode: NSF18FunctionKey)?.keyboardHIDUsage == .keyboardF18)
 		#expect(NSEvent.keyEvent(withUTF6CodePointKeyCode: NSF19FunctionKey)?.keyboardHIDUsage == .keyboardF19)
 		#expect(NSEvent.keyEvent(withUTF6CodePointKeyCode: NSF20FunctionKey)?.keyboardHIDUsage == .keyboardF20)
-
 	}
 }
 

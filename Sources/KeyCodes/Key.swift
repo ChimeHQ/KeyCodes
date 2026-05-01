@@ -215,6 +215,14 @@ public struct Key: Hashable, Sendable {
         self.modifierFlags = modifierFlags
     }
 
+	public init?(utf16CodePoint: UInt16) {
+		guard let char = Character(utf16CodePoint: utf16CodePoint) else {
+			return nil
+		}
+
+		self.init(char)
+	}
+
     public init?(_ character: Character) {
         self.characters = String(character)
         self.charactersIgnoringModifiers = String(character).lowercased()
@@ -458,9 +466,92 @@ public struct Key: Hashable, Sendable {
         case "?":
             self.keyCode = .keyboardSlash
             self.modifierFlags = [.shift]
-
         default:
-            return nil
+			guard
+				let character = character.utf16.first,
+				let code = Self.keyCodeFromFunctionKey(character)
+			else {
+				return nil
+			}
+
+			self.keyCode = code
         }
     }
+
+	private static func keyCodeFromFunctionKey(_ functionKeyCode: UInt16) -> KeyboardHIDUsage? {
+		switch Int(functionKeyCode) {
+		case NSUpArrowFunctionKey:
+			.keyboardUpArrow
+		case NSDownArrowFunctionKey:
+			.keyboardDownArrow
+		case NSLeftArrowFunctionKey:
+			.keyboardLeftArrow
+		case NSRightArrowFunctionKey:
+			.keyboardRightArrow
+		case NSHomeFunctionKey:
+			.keyboardHome
+		case NSDeleteFunctionKey:
+			.keyboardDeleteOrBackspace
+		case NSPageUpFunctionKey:
+			.keyboardPageUp
+		case NSPageDownFunctionKey:
+			.keyboardPageDown
+		case NSPrintScreenFunctionKey:
+			.keyboardPrintScreen
+		case NSUndoFunctionKey:
+			.keyboardUndo
+		case NSHelpFunctionKey:
+			.keyboardHelp
+		case NSFindFunctionKey:
+			.keyboardFind
+		case NSSelectFunctionKey:
+			.keyboardSelect
+		case NSMenuFunctionKey:
+			.keyboardMenu
+
+		case NSF1FunctionKey:
+			.keyboardF1
+		case NSF2FunctionKey:
+			.keyboardF2
+		case NSF3FunctionKey:
+			.keyboardF3
+		case NSF4FunctionKey:
+			.keyboardF4
+		case NSF5FunctionKey:
+			.keyboardF5
+		case NSF6FunctionKey:
+			.keyboardF6
+		case NSF7FunctionKey:
+			.keyboardF7
+		case NSF8FunctionKey:
+			.keyboardF8
+		case NSF9FunctionKey:
+			.keyboardF9
+		case NSF10FunctionKey:
+			.keyboardF10
+		case NSF11FunctionKey:
+			.keyboardF11
+		case NSF12FunctionKey:
+			.keyboardF12
+		case NSF13FunctionKey:
+			.keyboardF13
+		case NSF14FunctionKey:
+			.keyboardF14
+		case NSF15FunctionKey:
+			.keyboardF15
+		case NSF16FunctionKey:
+			.keyboardF16
+		case NSF17FunctionKey:
+			.keyboardF17
+		case NSF18FunctionKey:
+			.keyboardF18
+		case NSF19FunctionKey:
+			.keyboardF19
+		case NSF20FunctionKey:
+			.keyboardF20
+		default:
+			nil
+		}
+
+	}
 }
