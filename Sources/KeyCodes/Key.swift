@@ -467,6 +467,7 @@ public struct Key: Hashable, Sendable {
             self.keyCode = .keyboardSlash
             self.modifierFlags = [.shift]
         default:
+#if os(macOS)
 			guard
 				let character = character.utf16.first,
 				let code = Self.keyCodeFromFunctionKey(character)
@@ -475,9 +476,13 @@ public struct Key: Hashable, Sendable {
 			}
 
 			self.keyCode = code
-        }
+#else
+			return nil
+#endif
+		}
     }
 
+#if os(macOS)
 	private static func keyCodeFromFunctionKey(_ functionKeyCode: UInt16) -> KeyboardHIDUsage? {
 		switch Int(functionKeyCode) {
 		case NSUpArrowFunctionKey:
@@ -552,6 +557,6 @@ public struct Key: Hashable, Sendable {
 		default:
 			nil
 		}
-
 	}
+#endif
 }
