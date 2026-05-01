@@ -118,13 +118,13 @@ extension NSEvent {
         case kVK_ANSI_9:
             return .keyboard9
 
-        case kVK_LeftArrow:
+        case kVK_LeftArrow, NSLeftArrowFunctionKey:
             return .keyboardLeftArrow
-        case kVK_RightArrow:
+        case kVK_RightArrow, NSRightArrowFunctionKey:
             return .keyboardRightArrow
-        case kVK_UpArrow:
+        case kVK_UpArrow, NSUpArrowFunctionKey:
             return .keyboardUpArrow
-        case kVK_DownArrow:
+        case kVK_DownArrow, NSDownArrowFunctionKey:
             return .keyboardDownArrow
 
         case kVK_ANSI_Equal:
@@ -181,56 +181,56 @@ extension NSEvent {
         case kVK_ANSI_Keypad9:
             return .keypad9
 
-        case kVK_F1:
+        case kVK_F1, NSF1FunctionKey:
             return .keyboardF1
-        case kVK_F2:
+        case kVK_F2, NSF2FunctionKey:
             return .keyboardF2
-        case kVK_F3:
+        case kVK_F3, NSF3FunctionKey:
             return .keyboardF3
-        case kVK_F4:
+        case kVK_F4, NSF4FunctionKey:
             return .keyboardF4
-        case kVK_F5:
+        case kVK_F5, NSF5FunctionKey:
             return .keyboardF5
-        case kVK_F6:
+        case kVK_F6, NSF6FunctionKey:
             return .keyboardF6
-        case kVK_F7:
+        case kVK_F7, NSF7FunctionKey:
             return .keyboardF7
-        case kVK_F8:
+        case kVK_F8, NSF8FunctionKey:
             return .keyboardF8
-        case kVK_F9:
+        case kVK_F9, NSF9FunctionKey:
             return .keyboardF9
-        case kVK_F10:
+        case kVK_F10, NSF10FunctionKey:
             return .keyboardF10
-        case kVK_F11:
+        case kVK_F11, NSF11FunctionKey:
             return .keyboardF11
-        case kVK_F12:
+        case kVK_F12, NSF12FunctionKey:
             return .keyboardF12
-        case kVK_F13:
+        case kVK_F13, NSF13FunctionKey:
             return .keyboardF13
-        case kVK_F14:
+        case kVK_F14, NSF14FunctionKey:
             return .keyboardF14
-        case kVK_F15:
+        case kVK_F15, NSF15FunctionKey:
             return .keyboardF15
-        case kVK_F16:
+        case kVK_F16, NSF16FunctionKey:
             return .keyboardF16
-        case kVK_F17:
+        case kVK_F17, NSF17FunctionKey:
             return .keyboardF17
-        case kVK_F18:
+        case kVK_F18, NSF18FunctionKey:
             return .keyboardF18
-        case kVK_F19:
+        case kVK_F19, NSF19FunctionKey:
             return .keyboardF19
-        case kVK_F20:
+        case kVK_F20, NSF20FunctionKey:
             return .keyboardF20
 
-        case kVK_PageUp:
+        case kVK_PageUp, NSPageUpFunctionKey:
             return .keyboardPageUp
-        case kVK_PageDown:
+        case kVK_PageDown, NSPageDownFunctionKey:
             return .keyboardPageDown
-        case kVK_Home:
+        case kVK_Home, NSHomeFunctionKey:
             return .keyboardHome
-        case kVK_End:
+        case kVK_End, NSEndFunctionKey:
             return .keyboardEnd
-        case kVK_Help:
+        case kVK_Help, NSHelpFunctionKey:
             return .keyboardHelp
         case kVK_Return:
             return .keyboardReturn
@@ -238,7 +238,7 @@ extension NSEvent {
             return .keyboardTab
         case kVK_Space:
             return .keyboardSpacebar
-        case kVK_Delete:
+        case kVK_Delete, NSDeleteFunctionKey:
             return .keyboardDeleteOrBackspace
         case kVK_ForwardDelete:
             return .keyboardDeleteForward
@@ -248,6 +248,17 @@ extension NSEvent {
             return .keyboardVolumeUp
         case kVK_VolumeDown:
             return .keyboardVolumeDown
+
+		case NSPrintScreenFunctionKey:
+			return .keyboardPrintScreen
+		case NSUndoFunctionKey:
+			return .keyboardUndo
+		case NSFindFunctionKey:
+			return .keyboardFind
+		case NSSelectFunctionKey:
+			return .keyboardSelect
+		case NSMenuFunctionKey:
+			return .keyboardMenu
 
         default:
             return nil

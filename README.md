@@ -8,7 +8,7 @@
 
 # KeyCodes
 
-Versions of `UIKey`, `UIKeyboardHIDUsage`, and `UIKeyModifierFlags` that work with AppKit's `NSEvent`. No need for Carbon.HIToolbox. Aside from being a nicer API to work with, these versions should make it possible to more easily write source-compatible AppKit/UIKit keyboard handling code. Yes, this is basically a gigantic switch statement.
+Versions of `UIKey`, `UIKeyboardHIDUsage`, and `UIKeyModifierFlags` that work with AppKit's `NSEvent`. No need for Carbon.HIToolbox or using the `NS*FunctionKey` codes. Aside from being a nicer API to work with, these versions should make it possible to more easily write source-compatible AppKit/UIKit keyboard handling code. Yes, this is basically a gigantic switch statement.
 
 These structures are particularly helpful for writing tests. Constructing `NSEvent` instances by hand is a pain.
 
@@ -47,7 +47,7 @@ func withKeyCodes(_ event: NSEvent) {
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/ChimeHQ/KeyCodes", from: "0.1.1")
+    .package(url: "https://github.com/ChimeHQ/KeyCodes", from: "1.0.3")
 ]
 ```
 
